@@ -1,0 +1,29 @@
+{
+  "name": "todocore",
+  "version": "1.0.0",
+  "description": "A GraphQl Api to interact with todo items in a postgres DB",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/index.js",
+    "dev": "ts-node-dev --respawn -- src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennis-wolf/gqltodo.git"
+  },
+  "author": "Dennis Wolf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennis-wolf/gqltodo/issues"
+  },
+  "homepage": "https://github.com/dennis-wolf/gqltodo#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6"
+  }
+}
