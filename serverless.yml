@@ -1,0 +1,25 @@
+service: apollo-lambda
+useDotenv: true
+provider:
+  name: aws
+  region: eu-west-1
+  runtime: nodejs18.x
+  httpApi:
+    cors: true
+  environment:
+    DB_CONNECTION: ${env:DB_CONN_LAMBDA}
+functions:
+  gqltodo:
+    # The format is: <FILENAME>.<HANDLER>
+    handler: "src/lambda.graphqlHandler"
+    memorySize: 256
+    timeout: 15
+    events:
+      - httpApi:
+          path: /
+          method: POST
+      - httpApi:
+          path: /
+          method: GET
+plugins:
+  - serverless-plugin-typescript
