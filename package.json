@@ -7,9 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node dist/index.js",
-    "dev": "ts-node-dev --respawn -- src/index.ts"
+    "dev": "ts-node-dev --respawn -- src/index.ts",
+    "slslocal": "serverless invoke local -f gqltodo -p serverless/testquery.json",
+    "slsdeploy": "serverless deploy",
+    "slsdeploy-lambda": "serverless deploy function --function gqltodo",
+    "slsnuke": "serverless remove"
   },
   "repository": {
     "type": "git",
@@ -23,7 +28,16 @@
   "homepage": "https://github.com/dennis-wolf/gqltodo#readme",
   "devDependencies": {
     "nodemon": "^3.0.1",
+    "serverless": "^3.33.0",
+    "serverless-plugin-typescript": "^2.1.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.7.5",
+    "@as-integrations/aws-lambda": "^2.0.1",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
+    "postgres": "^3.3.5"
   }
 }
